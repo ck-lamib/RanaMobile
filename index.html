@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
+  <script src="https://kit.fontawesome.com/add2be7059.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.js"></script>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+    <!-- bootstrap 5.2.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+    <!-- bootstrap 5.2.3 -->
+  <link rel="stylesheet" href="style.css">
+  <title>Rana Mobile</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-light">
+    <div class="container-fluid row">
+      <div class='col-md-2'>
+        <img
+          src="data:image/png;base64,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"
+          class="logo-brand" />
+      </div>
+      <div class='col-md-6'>
+        <form class="d-flex">
+          <input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search" />
+          <button class="btn btn-outline-success " type="submit">Search</button>
+        </form>
+      </div>
+      <div class='col-md-2'>
+        <a href="login.html"><button class="btn btn-outline-success " type="submit">Login</button></a>
+        <a href="#"><button class="btn btn-outline-success " type="submit">Sign up</button></a>
+      </div>
+    </div>
+  </nav>
+
+  <section id="slider">
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="slide-img" src="https://upload.wikimedia.org/wikipedia/commons/1/15/Cat_August_2010-4.jpg"
+            alt="..." />
+          <!-- <div class="carousel-caption d-none d-md-block">
+            <h5>First slide label</h5>
+            <p>Some representative placeholder content for the first slide.</p>
+          </div> -->
+        </div>
+        <div class="carousel-item">
+          <img class="slide-img" src="https://cdn.britannica.com/16/234216-050-C66F8665/beagle-hound-dog.jpg" alt="..." />
+          <!-- <div class="carousel-caption d-none d-md-block">
+            <h5>Second slide label</h5>
+            <p>Some representative placeholder content for the second slide.</p>
+          </div> -->
+        </div>
+        <div class="carousel-item">
+          <img class="slide-img"
+            src="https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77702058448.jpg"
+            alt="..." />
+          <!-- <div class="carousel-caption d-none d-md-block">
+            <h5>Third slide label</h5>
+            <p>Some representative placeholder content for the third slide.</p>
+          </div> -->
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+
+  <section class="section-products">
+		<div class="container">
+				<div class="row justify-content-center text-center">
+						<div class="col-md-8 col-lg-6">
+								<div class="header">
+										<h3>Featured Product</h3>
+										<h2>Popular Products</h2>
+								</div>
+						</div>
+				</div>
+				<div class="row">
+						<!-- Single Product -->
+						<div class="col-md-6 col-lg-4 col-xl-3">
+								<div id="product-1" class="single-product">
+										<div class="part-1">
+												<ul>
+														<li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+														<li><a href="#"><i class="fas fa-heart"></i></a></li>
+														<li><a href="#"><i class="fas fa-plus"></i></a></li>
+														<li><a href="#"><i class="fas fa-expand"></i></a></li>
+												</ul>
+										</div>
+										<div class="part-2">
+												<h3 class="product-title">Here Product Title</h3>
+												<h4 class="product-old-price">$79.99</h4>
+												<h4 class="product-price">$49.99</h4>
+										</div>
+								</div>
+						</div>
+						<!-- Single Product -->
+						<div class="col-md-6 col-lg-4 col-xl-3">
+								<div id="product-2" class="single-product">
+										<div class="part-1">
+												<span class="discount">15% off</span>
+												<ul>
+														<li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+														<li><a href="#"><i class="fas fa-heart"></i></a></li>
+														<li><a href="#"><i class="fas fa-plus"></i></a></li>
+														<li><a href="#"><i class="fas fa-expand"></i></a></li>
+												</ul>
+										</div>
+										<div class="part-2">
+												<h3 class="product-title">Here Product Title</h3>
+												<h4 class="product-price">$49.99</h4>
+										</div>
+								</div>
+						</div>
+						<!-- Single Product -->
+						<div class="col-md-6 col-lg-4 col-xl-3">
+								<div id="product-3" class="single-product">
+										<div class="part-1">
+												<ul>
+														<li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+														<li><a href="#"><i class="fas fa-heart"></i></a></li>
+														<li><a href="#"><i class="fas fa-plus"></i></a></li>
+														<li><a href="#"><i class="fas fa-expand"></i></a></li>
+												</ul>
+										</div>
+										<div class="part-2">
+												<h3 class="product-title">Here Product Title</h3>
+												<h4 class="product-old-price">$79.99</h4>
+												<h4 class="product-price">$49.99</h4>
+										</div>
+								</div>
+						</div>
+						<!-- Single Product -->
+						<div class="col-md-6 col-lg-4 col-xl-3">
+								<div id="product-4" class="single-product">
+										<div class="part-1">
+												<span class="new">new</span>
+												<ul>
+														<li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+														<li><a href="#"><i class="fas fa-heart"></i></a></li>
+														<li><a href="#"><i class="fas fa-plus"></i></a></li>
+														<li><a href="#"><i class="fas fa-expand"></i></a></li>
+												</ul>
+										</div>
+										<div class="part-2">
+												<h3 class="product-title">Here Product Title</h3>
+												<h4 class="product-price">$49.99</h4>
+										</div>
+								</div>
+						</div>
+						<!-- Single Product -->
+						<div class="col-md-6 col-lg-4 col-xl-3">
+								<div id="product-1" class="single-product">
+										<div class="part-1">
+												<ul>
+														<li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+														<li><a href="#"><i class="fas fa-heart"></i></a></li>
+														<li><a href="#"><i class="fas fa-plus"></i></a></li>
+														<li><a href="#"><i class="fas fa-expand"></i></a></li>
+												</ul>
+										</div>
+										<div class="part-2">
+												<h3 class="product-title">Here Product Title</h3>
+												<h4 class="product-old-price">$79.99</h4>
+												<h4 class="product-price">$49.99</h4>
+										</div>
+								</div>
+						</div>
+						<!-- Single Product -->
+						<div class="col-md-6 col-lg-4 col-xl-3">
+								<div id="product-2" class="single-product">
+										<div class="part-1">
+												<span class="discount">15% off</span>
+												<ul>
+														<li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+														<li><a href="#"><i class="fas fa-heart"></i></a></li>
+														<li><a href="#"><i class="fas fa-plus"></i></a></li>
+														<li><a href="#"><i class="fas fa-expand"></i></a></li>
+												</ul>
+										</div>
+										<div class="part-2">
+												<h3 class="product-title">Here Product Title</h3>
+												<h4 class="product-price">$49.99</h4>
+										</div>
+								</div>
+						</div>
+						<!-- Single Product -->
+						<div class="col-md-6 col-lg-4 col-xl-3">
+								<div id="product-3" class="single-product">
+										<div class="part-1">
+												<ul>
+														<li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+														<li><a href="#"><i class="fas fa-heart"></i></a></li>
+														<li><a href="#"><i class="fas fa-plus"></i></a></li>
+														<li><a href="#"><i class="fas fa-expand"></i></a></li>
+												</ul>
+										</div>
+										<div class="part-2">
+												<h3 class="product-title">Here Product Title</h3>
+												<h4 class="product-old-price">$79.99</h4>
+												<h4 class="product-price">$49.99</h4>
+										</div>
+								</div>
+						</div>
+						<!-- Single Product -->
+						<div class="col-md-6 col-lg-4 col-xl-3">
+								<div id="product-4" class="single-product">
+										<div class="part-1">
+												<span class="new">new</span>
+												<ul>
+														<li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+														<li><a href="#"><i class="fas fa-heart"></i></a></li>
+														<li><a href="#"><i class="fas fa-plus"></i></a></li>
+														<li><a href="#"><i class="fas fa-expand"></i></a></li>
+												</ul>
+										</div>
+										<div class="part-2">
+												<h3 class="product-title">Here Product Title</h3>
+												<h4 class="product-price">$49.99</h4>
+										</div>
+								</div>
+						</div>
+				</div>
+		</div>
+</section>
+
+  <section id="display_product">
+    <div class="container">
+      <div class="section_bar" style="padding: 50px; padding-left: 0;">
+        <h3>Best Selling Products</h1>
+      </div>
+      <div id="carouselExampleControls" class="carousel" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="card">
+              <div class="img-wrapper"><img
+                  src="https://www.majority.co.uk/wp-content/uploads/2022/07/Superstar-Kids-Headphones-Blue.jpg"
+                  class="d-block w-100" alt=""> </div>
+              <div class="card-body">
+                <h5 class="card-title">Card title 1</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card">
+              <div class="img-wrapper"><img
+                  src="https://www.majority.co.uk/wp-content/uploads/2022/07/Superstar-Kids-Headphones-Blue.jpg"
+                  class="d-block w-100" alt=""> </div>
+              <div class="card-body">
+                <h5 class="card-title">Card title 2</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card">
+              <div class="img-wrapper"><img
+                  src="https://www.majority.co.uk/wp-content/uploads/2022/07/Superstar-Kids-Headphones-Blue.jpg"
+                  class="d-block w-100" alt=""> </div>
+              <div class="card-body">
+                <h5 class="card-title">Card title 3</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card">
+              <div class="img-wrapper"><img
+                  src="https://www.majority.co.uk/wp-content/uploads/2022/07/Superstar-Kids-Headphones-Blue.jpg"
+                  class="d-block w-100" alt=""> </div>
+              <div class="card-body">
+                <h5 class="card-title">Card title 4</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card">
+              <div class="img-wrapper"><img
+                  src="https://www.majority.co.uk/wp-content/uploads/2022/07/Superstar-Kids-Headphones-Blue.jpg"
+                  class="d-block w-100" alt=""> </div>
+              <div class="card-body">
+                <h5 class="card-title">Card title 5</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card">
+              <div class="img-wrapper"><img
+                  src="https://www.majority.co.uk/wp-content/uploads/2022/07/Superstar-Kids-Headphones-Blue.jpg"
+                  class="d-block w-100" alt=""> </div>
+              <div class="card-body">
+                <h5 class="card-title">Card title 6</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card">
+              <div class="img-wrapper"><img
+                  src="https://www.majority.co.uk/wp-content/uploads/2022/07/Superstar-Kids-Headphones-Blue.jpg"
+                  class="d-block w-100" alt=""> </div>
+              <div class="card-body">
+                <h5 class="card-title">Card title 7</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card">
+              <div class="img-wrapper"><img
+                  src="https://www.majority.co.uk/wp-content/uploads/2022/07/Superstar-Kids-Headphones-Blue.jpg"
+                  class="d-block w-100" alt=""> </div>
+              <div class="card-body">
+                <h5 class="card-title">Card title 8</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card">
+              <div class="img-wrapper"><img
+                  src="https://www.majority.co.uk/wp-content/uploads/2022/07/Superstar-Kids-Headphones-Blue.jpg"
+                  class="d-block w-100" alt=""> </div>
+              <div class="card-body">
+                <h5 class="card-title">Card title 9</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+
+        
+      </div>
+    </div>
+  </section>
+
+  <section id="display_product">
+    <div class="container">
+      <div class="section_bar" style="padding: 50px; padding-left: 0;">
+        <h3>Best Selling Products</h1>
+      </div>
+      <div id="carouselExampleControls" class="carousel" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="card">
+              <div class="img-wrapper"><img
+                  src="https://www.majority.co.uk/wp-content/uploads/2022/07/Superstar-Kids-Headphones-Blue.jpg"
+                  class="d-block w-100" alt=""> </div>
+              <div class="card-body">
+                <h5 class="card-title">Card title 1</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card">
+              <div class="img-wrapper"><img
+                  src="https://www.majority.co.uk/wp-content/uploads/2022/07/Superstar-Kids-Headphones-Blue.jpg"
+                  class="d-block w-100" alt=""> </div>
+              <div class="card-body">
+                <h5 class="card-title">Card title 2</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card">
+              <div class="img-wrapper"><img
+                  src="https://www.majority.co.uk/wp-content/uploads/2022/07/Superstar-Kids-Headphones-Blue.jpg"
+                  class="d-block w-100" alt=""> </div>
+              <div class="card-body">
+                <h5 class="card-title">Card title 3</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card">
+              <div class="img-wrapper"><img
+                  src="https://www.majority.co.uk/wp-content/uploads/2022/07/Superstar-Kids-Headphones-Blue.jpg"
+                  class="d-block w-100" alt=""> </div>
+              <div class="card-body">
+                <h5 class="card-title">Card title 4</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card">
+              <div class="img-wrapper"><img
+                  src="https://www.majority.co.uk/wp-content/uploads/2022/07/Superstar-Kids-Headphones-Blue.jpg"
+                  class="d-block w-100" alt=""> </div>
+              <div class="card-body">
+                <h5 class="card-title">Card title 5</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card">
+              <div class="img-wrapper"><img
+                  src="https://www.majority.co.uk/wp-content/uploads/2022/07/Superstar-Kids-Headphones-Blue.jpg"
+                  class="d-block w-100" alt=""> </div>
+              <div class="card-body">
+                <h5 class="card-title">Card title 6</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card">
+              <div class="img-wrapper"><img
+                  src="https://www.majority.co.uk/wp-content/uploads/2022/07/Superstar-Kids-Headphones-Blue.jpg"
+                  class="d-block w-100" alt=""> </div>
+              <div class="card-body">
+                <h5 class="card-title">Card title 7</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card">
+              <div class="img-wrapper"><img
+                  src="https://www.majority.co.uk/wp-content/uploads/2022/07/Superstar-Kids-Headphones-Blue.jpg"
+                  class="d-block w-100" alt=""> </div>
+              <div class="card-body">
+                <h5 class="card-title">Card title 8</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card">
+              <div class="img-wrapper"><img
+                  src="https://www.majority.co.uk/wp-content/uploads/2022/07/Superstar-Kids-Headphones-Blue.jpg"
+                  class="d-block w-100" alt=""> </div>
+              <div class="card-body">
+                <h5 class="card-title">Card title 9</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+
+        
+      </div>
+    </div>
+  </section>
+
+  <section id="display_product">
+    <div class="container">
+      <div class="section_bar" style="padding: 50px; padding-left: 0;">
+        <h3>Best Selling Products</h1>
+      </div>
+      <div id="carouselExampleControls" class="carousel" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="card">
+              <div class="img-wrapper"><img
+                  src="https://www.majority.co.uk/wp-content/uploads/2022/07/Superstar-Kids-Headphones-Blue.jpg"
+                  class="d-block w-100" alt=""> </div>
+              <div class="card-body">
+                <h5 class="card-title">Card title 1</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card">
+              <div class="img-wrapper"><img
+                  src="https://www.majority.co.uk/wp-content/uploads/2022/07/Superstar-Kids-Headphones-Blue.jpg"
+                  class="d-block w-100" alt=""> </div>
+              <div class="card-body">
+                <h5 class="card-title">Card title 2</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card">
+              <div class="img-wrapper"><img
+                  src="https://www.majority.co.uk/wp-content/uploads/2022/07/Superstar-Kids-Headphones-Blue.jpg"
+                  class="d-block w-100" alt=""> </div>
+              <div class="card-body">
+                <h5 class="card-title">Card title 3</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card">
+              <div class="img-wrapper"><img
+                  src="https://www.majority.co.uk/wp-content/uploads/2022/07/Superstar-Kids-Headphones-Blue.jpg"
+                  class="d-block w-100" alt=""> </div>
+              <div class="card-body">
+                <h5 class="card-title">Card title 4</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card">
+              <div class="img-wrapper"><img
+                  src="https://www.majority.co.uk/wp-content/uploads/2022/07/Superstar-Kids-Headphones-Blue.jpg"
+                  class="d-block w-100" alt=""> </div>
+              <div class="card-body">
+                <h5 class="card-title">Card title 5</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card">
+              <div class="img-wrapper"><img
+                  src="https://www.majority.co.uk/wp-content/uploads/2022/07/Superstar-Kids-Headphones-Blue.jpg"
+                  class="d-block w-100" alt=""> </div>
+              <div class="card-body">
+                <h5 class="card-title">Card title 6</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card">
+              <div class="img-wrapper"><img
+                  src="https://www.majority.co.uk/wp-content/uploads/2022/07/Superstar-Kids-Headphones-Blue.jpg"
+                  class="d-block w-100" alt=""> </div>
+              <div class="card-body">
+                <h5 class="card-title">Card title 7</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card">
+              <div class="img-wrapper"><img
+                  src="https://www.majority.co.uk/wp-content/uploads/2022/07/Superstar-Kids-Headphones-Blue.jpg"
+                  class="d-block w-100" alt=""> </div>
+              <div class="card-body">
+                <h5 class="card-title">Card title 8</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card">
+              <div class="img-wrapper"><img
+                  src="https://www.majority.co.uk/wp-content/uploads/2022/07/Superstar-Kids-Headphones-Blue.jpg"
+                  class="d-block w-100" alt=""> </div>
+              <div class="card-body">
+                <h5 class="card-title">Card title 9</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- footer section starts here-->
+  <footer class="bg-dark text-center text-white" style="margin-top: 60px;">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+      <!-- Section: Social media -->
+      <section class="mb-4">
+        <!-- Facebook -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+
+        <!-- Twitter -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+
+        <!-- Instagram -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+
+        <!-- tiktok -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+            class="fa-brands fa-tiktok"></i></a>
+
+      </section>
+      <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2020 Copyright:
+      <a class="text-white" href="">atishgurung13@gmail.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- footer section ends here -->
+
+  <script src="script.js"></script>
+</body>
+
+</html>
